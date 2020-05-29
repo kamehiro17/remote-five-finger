@@ -1,0 +1,72 @@
+<template name="front">
+  <div class="container text-dark text-center mx-auto my-3">
+    <h1>Remote five-finger!</h1>
+    {{#if published}}
+    {{> result}}
+    {{else}}
+    {{> input}}
+    {{/if}}
+  </div>
+</template>
+
+<template name="input">
+  <form id="frontForm">
+    <div class="form-group">
+      <div class="my-4">
+        <input type="text" class="form-control mx-auto" id="name" name="name" placeholder="おなまえ" maxlength="15"
+          style="width: 15em" />
+        <!-- {{> loginButtons}} -->
+      </div>
+      <h2>今日のフィンガー</h2>
+      <a href="https://docs.google.com/presentation/d/1Nbvm7OYlaKCCsornlibzpKw7Ge5V0sv6r6uHIMFp-eQ/edit">参考</a>
+      <ul class="select-finger">
+        <li>
+          <input type="radio" id="finger5" name="finger" value="5" />
+          <label for="finger5"><img src="images/finger5.png" /></label>
+        </li>
+        <li>
+          <input type="radio" id="finger4" name="finger" value="4" />
+          <label for="finger4"><img src="images/finger4.png" /></label>
+        </li>
+        <li>
+          <input type="radio" id="finger3" name="finger" value="3" />
+          <label for="finger3"><img src="images/finger3.png" /></label>
+        </li>
+        <li>
+          <input type="radio" id="finger2" name="finger" value="2" />
+          <label for="finger2"><img src="images/finger2.png" /></label>
+        </li>
+        <li>
+          <input type="radio" id="finger1" name="finger" value="1" />
+          <label for="finger1"><img src="images/finger1.png" /></label>
+        </li>
+      </ul>
+      <input type="text" class="form-control mx-auto" name="message" placeholder="ひとことあれば(〜40文字)" maxlength="40"
+        style="width: 45em" />
+      <div class="my-3">
+        <button type="submit" class="btn btn-primary">きめた！</button>
+      </div>
+    </div>
+  </form>
+</template>
+
+<template name="result">
+  <h2>どん！</h2>
+  <div class="resultView d-flex flex-row flex-wrap justify-content-around" style="width: 100%;">
+  {{#each members}}
+  <div class="p-2 bd-highlight">
+  {{> memberView}}
+  </div>
+  {{/each}}
+  </div>
+</template>
+
+<template name="memberView">
+  <div class="member">
+    <div class="name">{{name}}</div>
+    <div class="finger"><img src="images/finger{{finger}}.png" /></div>
+    {{#if message}}
+    <div class="message">{{message}}</div>
+    {{/if}}
+  </div>
+</template>

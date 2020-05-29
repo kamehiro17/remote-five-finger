@@ -1,0 +1,23 @@
+<template name="admin">
+  <div class="container text-center mx-auto my-3">
+    <h1>Remote five-finger - for facilitator</h1>
+    <h2 class="my-3">入力状況</h2>
+    <hr />
+    {{date}}
+    <div class="mx-auto my-1">
+      name,finger,message,publishFlag
+      {{#each members}}
+      {{> memberAdminView}}
+      {{/each}}
+    </div>
+    <hr />
+    <button id="clearBtn" type="submit" class="publishButton btn btn-warning my-3">初期化する</button>
+    <button id="openBtn" type="submit" class="publishButton btn btn-primary my-3">公開する</button>
+  </div>
+</template>
+
+<template name="memberAdminView">
+  <div class="mx-auto my-1">
+    {{name}},{{finger}},{{#if message}}{{message}}{{/if}},{{publishFlag}}
+  </div>
+</template>
