@@ -1,16 +1,21 @@
 # remote-five-finger
+
 online five-finger work tool
 
 # How to use
 
 ## local
+
 ### clone & start
-```bash
-$ git clone https://github.com/kamehiro17/remote-five-finger.git`
-$ cd remote-five-finger
-$ meteor
+
+```sh
+git clone https://github.com/kamehiro17/remote-five-finger.git
+cd remote-five-finger
+meteor npm install
+meteor
 ```
 
 ### access
-member: `http://localhost:3000/front`  
-facilitator: `http://localhost:3000/admin`
+
+for member: `http://localhost:3000/front`  
+for facilitator: `http://localhost:3000/admin`
