@@ -17,5 +17,5 @@ meteor
 
 ### access
 
-for member: `http://localhost:3000/front`  
+for member: `http://localhost:3000` ( or `http://localhost:3000/front`) 
 for facilitator: `http://localhost:3000/admin`

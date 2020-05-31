@@ -20,3 +20,12 @@ FlowRouter.route("/admin", {
     BlazeLayout.render("admin");
   },
 });
+
+FlowRouter.route("/", {
+  name: "front",
+  action() {
+    require("../../ui/front.js")
+    BlazeLayout.render("front");
+  },
+});
+
