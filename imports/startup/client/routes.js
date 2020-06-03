@@ -3,7 +3,7 @@ import { BlazeLayout } from "meteor/kadira:blaze-layout";
 
 // Import to load these templates
 import "../../ui/front.html";
-import "../../ui/admin.html";
+import "../../ui/facilitator-console.html";
 
 FlowRouter.route("/front", {
   name: "front",
@@ -13,11 +13,11 @@ FlowRouter.route("/front", {
   },
 });
 
-FlowRouter.route("/admin", {
-  name: "admin",
+FlowRouter.route("/facilitator-console", {
+  name: "facilitator-console",
   action() {
-    require("../../ui/admin.js")
-    BlazeLayout.render("admin");
+    require("../../ui/facilitator-console.js")
+    BlazeLayout.render("facilitatorConsole");
   },
 });
 

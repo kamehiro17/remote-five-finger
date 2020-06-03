@@ -2,12 +2,12 @@ import { Meteor } from "meteor/meteor";
 import { Template } from "meteor/templating";
 import { Members } from "../api/collections";
 
-Template.admin.onCreated(function () {
-  console.log("admin.onCreated");
+Template.facilitatorConsole.onCreated(function () {
+  console.log("facilitator-console.onCreated");
   Meteor.subscribe("members");
 });
 
-Template.admin.helpers({
+Template.facilitatorConsole.helpers({
   members() {
     console.log("Members.find()");
     console.log(Members.find());
@@ -24,7 +24,7 @@ Template.admin.helpers({
   },
 });
 
-Template.admin.events({
+Template.facilitatorConsole.events({
   "click #clearBtn"(event) {
     event.preventDefault();
     Meteor.call("clear");
