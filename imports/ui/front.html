@@ -10,18 +10,21 @@
 </template>
 
 <template name="input">
-  <form id="frontForm">
+  <form id="frontForm" class="needs-validation" novalidate>
     <div class="form-group">
       <div class="my-4">
         <input type="text" class="form-control mx-auto" id="name" name="name" placeholder="おなまえ" maxlength="15"
-          style="width: 15em" />
+          style="width: 15em" required />
+        <div class="invalid-feedback">
+          入力をお願いします m(_ _m
+        </div>
         <!-- {{> loginButtons}} -->
       </div>
       <h2>今日のフィンガー</h2>
       <a href="https://docs.google.com/presentation/d/1Nbvm7OYlaKCCsornlibzpKw7Ge5V0sv6r6uHIMFp-eQ/edit">参考</a>
       <ul class="select-finger">
         <li>
-          <input type="radio" id="finger5" name="finger" value="5" />
+          <input type="radio" id="finger5" name="finger" value="5" required />
           <label for="finger5"><img src="images/finger5.png" /></label>
         </li>
         <li>
@@ -41,8 +44,12 @@
           <label for="finger1"><img src="images/finger1.png" /></label>
         </li>
       </ul>
-      <input type="text" class="form-control mx-auto" name="message" placeholder="ひとことあれば(〜40文字)" maxlength="40"
-        style="width: 45em" />
+      <input type="radio" id="finger_blank" name="finger" value="" hidden style="height: 0;" />
+      <div class="invalid-feedback">
+        選択をお願いします m(_ _m
+      </div>
+      <input type="text" class="form-control mx-auto my-4" name="message" placeholder="ひとことどうぞ！(〜40文字)" maxlength="40"
+        style="width: 45em" autocomplete="off"/>
       <div class="my-3">
         <button type="submit" class="btn btn-primary">きめた！</button>
       </div>
@@ -53,11 +60,11 @@
 <template name="result">
   <h2>どん！</h2>
   <div class="resultView d-flex flex-row flex-wrap justify-content-around" style="width: 100%;">
-  {{#each members}}
-  <div class="p-2 bd-highlight">
-  {{> memberView}}
-  </div>
-  {{/each}}
+    {{#each members}}
+    <div class="p-2 bd-highlight">
+      {{> memberView}}
+    </div>
+    {{/each}}
   </div>
 </template>
 

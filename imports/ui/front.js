@@ -25,6 +25,13 @@ Template.front.events({
     console.log("frontForm submitted.");
     event.preventDefault();
     const $el = $(event.currentTarget);
+    if ($el[0].checkValidity() === false) {
+      console.log("fail");
+      event.preventDefault();
+      event.stopPropagation();
+      $el[0].classList.add("was-validated");
+      return;
+    }
     const name = $el.find('[name="name"]').val();
     const finger = $el.find('[name="finger"]:checked').val();
     const message = $el.find('[name="message"]').val();

@@ -1,8 +1,16 @@
+.form-control.is-valid:focus,
+.was-validated :valid.form-control {
+  border-color: #ced4da !important;
+  background-image: inherit !important;
+  box-shadow: inherit !important;
+}
+
 #frontForm {
   input[type="text"] {
     text-align: center;
   }
   ul.select-finger {
+    margin-bottom: -1rem;
     li {
       display: inline-block;
       input[type="radio"] {
