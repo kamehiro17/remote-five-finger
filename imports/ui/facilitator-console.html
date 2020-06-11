@@ -5,8 +5,9 @@
     <hr />
     {{date}}
     <div class="mx-auto my-1">
+      カウント：{{members.find.count}} <br />
       name,finger,message,publishFlag
-      {{#each members}}
+      {{#each members.find}}
       {{> memberAdminView}}
       {{/each}}
     </div>
