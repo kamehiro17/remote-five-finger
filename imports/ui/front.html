@@ -10,7 +10,10 @@
 </template>
 
 <template name="input">
+  <a href="./about" target="_blank">「ファイブフィンガー」ってなに？</a>
+  <hr />
   <form id="frontForm" class="needs-validation" novalidate>
+    <h2>今日のフィンガー</h2>
     <div class="form-group">
       <div class="my-4">
         <input type="text" class="form-control mx-auto" id="name" name="name" placeholder="おなまえ" maxlength="15"
@@ -20,8 +23,6 @@
         </div>
         <!-- {{> loginButtons}} -->
       </div>
-      <h2>今日のフィンガー</h2>
-      <a href="https://docs.google.com/presentation/d/1Nbvm7OYlaKCCsornlibzpKw7Ge5V0sv6r6uHIMFp-eQ/edit">参考</a>
       <ul class="select-finger">
         <li>
           <input type="radio" id="finger5" name="finger" value="5" required />
@@ -58,7 +59,8 @@
 </template>
 
 <template name="result">
-  <h2>どん！</h2>
+  <hr />
+  <h3>どん！</h3>
   <div class="resultView d-flex flex-row flex-wrap justify-content-around" style="width: 100%;">
     {{#each members}}
     <div class="p-2 bd-highlight">
