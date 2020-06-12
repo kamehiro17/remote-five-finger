@@ -2,21 +2,35 @@
 
 「『せーの、どん！』でチームのいまを知る」  
   
-[カイゼン・ジャーニー](https://kaizenjourney.jp/) で紹介されているプラクティス「ファイブフィンガー」を気軽にリモートでやるためのアプリです。  
+[カイゼン・ジャーニー](https://kaizenjourney.jp/) で紹介されているプラクティス「ファイブフィンガー」を気軽にリモートで実施するためのオンラインツールです。  
 
 ![screenshot](./screenshot.gif)
 
+## Demo
+
+[https://remote-five-finger.uc.r.appspot.com/](https://remote-five-finger.uc.r.appspot.com/)  
+※予告なく停止することがあります  
+
+1. [ファシリテーター向けページ](https://remote-five-finger.uc.r.appspot.com/facilitator-console) を開きます
+2. 1のページを開いたまま、 [メンバー向けページ](https://remote-five-finger.uc.r.appspot.com/front) を開きます
+3. 各項目を入力して「きめた！」ボタンを押します
+4. 1で開いていたファシリテーター向けページに、メンバー向けページの入力内容が表示されます
+5. ファシリテーター向けページで「公開する」ボタンを押します
+6. メンバー向けページが入力画面から発表画面に切り替わります
+7. 終わったら、ファシリテーター向けページの「初期化する」ボタンを押して内容をクリアします
+
 ## Overview
 
-アプリ化するにあたって以下の点を工夫しています。  
+- Dockerfileを含んでいますので、ビルドしてGKEなどに上げれば自分のチーム用の環境がすぐできます
+  - `n1-standard-1`で充分です。  
 
-- お手軽さの重視：名前を書いて指を選べばそれでOK、ひとこともあえて短く制限
-- 「せーの、どん！」の重視：入力時点で他メンバーが見えない(空気読みをしない)
-- どん！の一覧性：12人くらいまでならMBPのディスプレイで1画面に収まる(はず)
-- リアルタイム性：リロードなしで入力→結果に切り替え
+- アプリ化するにあたって以下の点を工夫しています
+  - お手軽さの重視：名前を書いて指を選べばそれでOK、ひとこともあえて短く制限
+  - 「せーの、どん！」の重視：入力時点で他メンバーが見えない(空気読みをしない)
+  - どん！の一覧性：12人くらいまでならMBPのディスプレイで1画面に収まる(はず)
+  - リアルタイム性：リロードなしで入力→結果に切り替え
 
-Dockerfileを含んでいますので、ビルドしてGKEなどに上げれば自分のチーム用の環境がすぐできます。  
-`n1-standard-1`で充分です。  
+
 
 ## Known Issue
 
@@ -28,12 +42,17 @@ Dockerfileを含んでいますので、ビルドしてGKEなどに上げれば�
 
 ## Table Of Contents
 
-- [Setup](#setup)
-  - [A. Docker](#a-docker)
-  - [B. step-by-step](#b-step-by-step)
-- [Usage](#usage)
-  - [for member](#for-member)
-  - [for facilitator](#for-facilitator)
+- [remote-five-finger](#remote-five-finger)
+  - [Demo](#demo)
+  - [Overview](#overview)
+  - [Known Issue](#known-issue)
+  - [Table Of Contents](#table-of-contents)
+  - [Setup](#setup)
+    - [A. Docker](#a-docker)
+    - [B. step-by-step](#b-step-by-step)
+  - [Usage](#usage)
+    - [for member](#for-member)
+    - [for facilitator](#for-facilitator)
 
 ## Setup
 
