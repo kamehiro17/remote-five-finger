@@ -1,0 +1,22 @@
+$caption-text-color: rgb(97, 95, 93);
+h1 {
+    font-size: 2.4rem !important;
+}
+
+h2 {
+    font-size: 1.6rem !important;
+}
+
+.description {
+    font-size: 0.9rem;
+}
+
+.caption {
+    color: $caption-text-color;
+    font-style: italic;
+}
+
+footer {
+    font-size: small;
+    line-height: unset;
+}

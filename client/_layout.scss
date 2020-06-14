@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    .container {
+        min-height: 82vh;
+    }
+    footer {
+        margin-top: auto;
+        text-align: center;
+    }
+}
