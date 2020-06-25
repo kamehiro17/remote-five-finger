@@ -27,8 +27,10 @@ Template.facilitatorConsole.helpers({
 
 Template.facilitatorConsole.events({
     "click #clearBtn" (event) {
-        event.preventDefault();
-        Meteor.call("clear");
+        if (confirm("初期化します。よろしいですか？")) {
+            event.preventDefault();
+            Meteor.call("clear");
+        }
     },
     "click #openBtn" (event) {
         event.preventDefault();
