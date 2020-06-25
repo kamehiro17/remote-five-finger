@@ -74,4 +74,59 @@ ul.select-finger {
             font-style: italic;
         }
     }
+    $finger-bg-1: rgb(235, 209, 206);
+    $finger-bg-2: rgb(241, 237, 182);
+    $finger-bg-3: rgb(222, 236, 209);
+    $finger-bg-4: rgb(203, 236, 200);
+    $finger-bg-5: rgb(203, 227, 238);
+    @mixin cardBackgroundColor($number) {
+        @if $number==1 {
+            background-color: $finger-bg-1;
+            animation: vibrate ease-in-out 0.01s infinite alternate;
+        }
+        @else if $number==2 {
+            background-color: $finger-bg-2;
+            animation: vibrate ease-in-out 1.2s infinite alternate;
+        }
+        @else if $number==3 {
+            background-color: $finger-bg-3;
+        }
+        @else if $number==4 {
+            background-color: $finger-bg-4;
+            animation: little-emphasis cubic-bezier(0.6, 0.0, 1.0, 1.0) 0.5s;
+        }
+        @else if $number==5 {
+            background-color: $finger-bg-5;
+            animation: emphasis cubic-bezier(0.8, 0.0, 1.0, 1.0) 0.68s infinite alternate;
+        }
+    }
+    @for $i from 1 through 5 {
+        .member--finger#{$i} {
+            @include cardBackgroundColor($i);
+        }
+    }
+    @keyframes vibrate {
+        0% {
+            transform: rotate(0.5deg);
+        }
+        100% {
+            transform: rotate(-0.5deg);
+        }
+    }
+    @keyframes emphasis {
+        0% {
+            transform: scale(0.983, 0.983);
+        }
+        100% {
+            transform: scale(1.013, 1.013);
+        }
+    }
+    @keyframes little-emphasis {
+        0% {
+            transform: scale(0.93, 0.93);
+        }
+        100% {
+            transform: scale(1.0, 1.0);
+        }
+    }
 }

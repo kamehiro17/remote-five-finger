@@ -72,7 +72,7 @@
 </template>
 
 <template name="memberView">
-  <div class="member">
+  <div class="member member--finger{{finger}}">
     <div class="name">{{name}}</div>
     <div class="finger"><img src="images/finger{{finger}}.png" /></div>
     {{#if message}}
