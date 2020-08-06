@@ -56,6 +56,6 @@ Template.front.events({
             .attr("disabled", true)
             .attr("class", "btn btn-success")
             .text("おくりました！");
-        Cookies.set("name", encodeURIComponent(name));
+        Cookies.set("name", encodeURIComponent(name), { expires: 730 });
     },
 });
